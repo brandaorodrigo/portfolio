@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rodrigo brandão / portifólio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: 'Outfit', sans-serif;
+            max-width: 100dvw;
+            font-size: 16px;
+            margin: 0;
+            color: #444;
+            padding: 0;
+            background-color: #111;
+        }
+        .section {
+            width: 100%;
+            max-width: 960px;
+            background-color: #fff;
+            text-align: center;
+            padding: 0;
+            page-break-after: always; /* or avoid, auto */
+            margin:0;
+            position: relative;
+        }
+        .parallax {
+           
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .parallax h2 {
+            position: absolute;
+            color: #fff;
+            font-size: 2em;
+            font-weight: 600;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+        .profile {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-position: center;
+            background-size: cover;
+            color: #fff;
+            font-size: 1.5em;
+            background-image: url('topo1.jpg');
+        }
+        .scroll-down {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #fff;
+            font-size: 1.2em;
+            opacity: 0.8;
+            animation: bounce 2s infinite;
+        }
+        h2 {
+            margin: 0 0 10px 0;
+            line-height: 1;
+        }
+        h1 {
+            position: absolute;
+            bottom: 75px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 55px;
+            width: 100%;
+            color: #fff;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            letter-spacing: 3px;
+            line-height: 1;
+        }
+        h1,h2, h3 {
+            font-family: 'Bebas Neue';
+            margin:0;
+            line-height: 1;
+        }
+        h1 strong {
+            font-size: 12.5px;
+            line-height: 1;
+            display: block;
+            margin:5px 0 0 0;
+            color:#ccee00;
+            font-family: 'Outfit', sans-serif;
+        }
+        h2 {
+            letter-spacing: 1px;
+            font-size: 40px;
+            margin:0;
+            line-height: 1;
+        }
+        h2 strong {
+            font-size: 12.5px;
+            line-height: 1;
+            margin:5px 0 0 0;
+            font-family: 'Outfit', sans-serif;
+        }
+        h3 {
+            letter-spacing: 1px;
+            font-size: 32px;
+        }
+        h3 strong {
+            font-size: 12.5px;
+            line-height: 1;
+            margin:5px 0 0 0;
+            font-family: 'Outfit', sans-serif;
+        }
+        h4 {
+            letter-spacing: 0;
+            margin:10px 0 20px 0;
+            line-height: 1;
+            font-size: 14px;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translate(-50%, 0); }
+            50% { transform: translate(-50%, -10px); }
+        }
+        .content {
+            margin: auto;
+            padding: 60px;
+            text-align: left;
+        }
+        .center {
+            text-align: center;
+        }
+        .col2 {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            gap: 20px;
+        }
+        .sobre-col {
+            flex: 1;
+            padding: 0 50px 0 0;
+            text-align: left;
+        }
+        .sobre-col2 {
+            flex: 1;
+            padding: 0 0 0 0;
+            text-align: left;
+        }
+        .producoes {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+        .producoes img {
+            width: 100%;
+        }
+        .contato-info {
+            list-style: none;
+            padding: 0;
+        }
+        .contato-info li {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .contato-info li i {
+            color: #fff;
+            font-size: 1.2em;
+        }
+        @media (max-width: 768px) {
+            .producoes {
+                grid-template-columns: 1fr;
+            }
+            .col2 {
+                flex-direction: column;
+            }
+            .content {
+                margin: auto;
+                padding: 30px;
+            }
+        }
+        @media (min-width: 768px) {
+            .col2 {
+                flex-direction: row;
+            }
+        }
+        small {
+            opacity: 0.7;
+        }
+        .crono {
+            font-size:14px;
+        }
+        .imprensa img {
+            width: 100px;
+        }
+
+        .links {
+            background:#ccee00;
+        }
+        .links a {
+            color: #222;
+            text-decoration: none;
+            margin: 14px;
+            display: inline-block;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+
+        .button {
+            color:#fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 12px 18px;
+            display: block;
+            width: 100px;
+            margin:10px auto;
+            background:#222;
+            border-radius: 50px;
+        }
+
+        a {
+            color: #444;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="section profile">
+        <div class="scroll-down">↓</div>
+        <h1>Rodrigo Brandão<br/><strong>DIREÇÃO, VFX, MONTAGEM, FINALIZAÇÃO</strong></h1>
+    </div>
+    <div class="section">
+        <div class="content left">
+            <h2 style="text-align:center">SOBRE MIM</h2><br/>
+            <strong>Rodrigo Brandão</strong>, natural de Santos Dumont - MG, tem uma carreira de 18 anos no audiovisual e 7 anos no cinema, com diversos projetos entre curtas-metragens, videoclipes e trabalhos em longas-metragens. Destacam-se produções autorais premiadas como “1996” (2020), que recebeu 10 prêmios e foi exibido em mais de 20 festivais renomados.<br/><br/>
+            Também se destaca “Histórias Estranhas” (2017) - Prime Video, vencedor do prêmio do público no Macabro: International Horror Film Festival of Mexico City, onde participou como diretor e roteirista do segmento "Ninguém" e motion design do longa-metragem.<br/><br/>
+            Entre suas contribuições mais recentes, Brandão tem colaborado como artista de efeitos digitais em filmes como “Enterre Seus Mortos” (2024) - Globoplay e "Encanto Quebrado" (2023) - Imovision. Além de seu trabalho no cinema, também dirigiu videoclipes, como “A Luz” da banda Jane e “Conviction” da banda Primatéria.
+        </div>
+    </div>
+    <div class="section links">
+        <div class="content center">
+            <a href="https://www.youtube.com/@rdrgbrnd" target="_blank">Youtube</a>
+            <a href="https://instagram.com/rdrgbrnd" targer="_blank">Instagram</a>
+            <a href="https://letterboxd.com/director/rodrigo-brandao/" target="_blank">Letterboxd</a> 
+            <a href="https://www.imdb.com/name/nm7900941/" target="_blank">IMDb</a>
+            <a href="mailto:rodrigo.brandao.contato@gmail.com" target="_blank">E-mail</a>
+        </div>
+    </div>
+    <div class="section">
+        <div class="parallax" style="background-image: url('bg3.jpg');">
+            <h2>Principais trabalhos</h2>
+        </div>
+        <div class="content col2">
+            <div class="sobre-col" style="font-size:14px">
+                <h3>1996 <strong>(2020)</strong></h3><br/>
+                <h4>Funções</h4>
+                Direção, roteiro, direção de fotografia, montagem, efeitos digitais, colorização, mixagem de som, finalização, marketing.<br><br>
+                <h4>Distribuição</h4>
+                Minas Play<br/><br/>
+                <h4>Prêmios</h4>
+                <strong>19º Festival Primeiro Plano</strong> (Juiz de Fora, MG)<br>
+                Prêmio José Sette<br><br>
+                <strong>5º Cine Tamoio</strong> (São Gonçalo, RJ)<br>
+                Melhor Curta de Terror<br>
+                Melhor Montagem<br><br>
+                <strong>13º Curta Taquary</strong> (Taquaritinga do Norte, PE)<br>
+                Melhor Curta Fantástico - Júri da Crítica<br>
+                Melhor Fotografia - Mostra Curtas Fantásticos<br>
+                Melhor Direção de Arte - Mostra Curtas Fantásticos<br>
+                Melhor Figurino - Mostra Curtas Fantásticos<br><br>
+                <strong>3º Fantasnóia</strong> (Novo Hamburgo, RS)<br>
+                Melhor Montagem<br>
+                Melhor Som<br><br>
+                <strong>Rock Horror Film Festival 2020</strong> (Rio de Janeiro, RJ)<br>
+                <i>Menção Especial:</i> Originalidade<br><br>
+                <h4>Principais festivais</h4>
+                23ª Mostra de Cinema de Tiradentes (Tiradentes, MG)<br>
+                Festival Primeiro Plano 2020 (Juiz de Fora, MG)<br>
+                13º Curta Taquary (Taquaritinga do Norte, PE)<br>
+                3º Fantasnóia (Novo Hamburgo, RS)<br>
+                Rock Horror Film Festival 2020 (Rio de Janeiro, RJ)<br>
+                1º FICRIO - Festival Internacional de Curtas (Rio de Janeiro, RJ)<br>
+                Ver Cine 2020 (Duque de Caxias, RJ)<br>
+                Phenomena Fest 2019 (São Paulo, SP)<br>
+                A Vingança dos Filmes B (Porto Alegre, RS)<br>
+                Mostra de Cinema de Santos Dumont 2019 (Santos Dumont, MG)<br>
+                5º Cine Tamoio - Festival de Cinema (São Gonçalo, RJ)<br>
+                Sessão de Férias - Cinemamm (Juiz de Fora, MG)<br>
+                19º Festival Primeiro Plano (Juiz de Fora, MG)<br>
+                Festival Boca do Inferno 2020 (São Paulo, SP)<br>
+                1º FestCurtas FUNDAJ (Recife, PE)<br>
+                13ª MOSCA (Cambuquira, MG)<br>
+            </div>
+            <div class="sobre-col2" style="text-align:center">
+                <img src="cartaz_1996.png" width="100%" style="border-radius:15px"/>
+                <a href="https://www.youtube.com/watch?v=d5pr9poIx7A" target="_blank" class="button">Trailer</a>
+                <a href="https://minasplay.com/video/1752/1996/" target="_blank" class="button">Assistir</a>
+            </div>
+        </div>
+        <div class="content col2">
+            <div class="sobre-col" style="font-size:14px" >
+                <h3>Histórias Estranhas <strong>(2017)</strong></h3><br/>
+                <h4>Funções</h4>
+                Direção, roteiro, montagem, efeitos digitais, finalização, motion designer, designer.<br><br>
+                <h4>Sinopse</h4>
+                Oito diretores se reuniram para transportar o espectador para o mundo do terror. O suspense, o bizarro e o inexplicável se encontram nesta coletânea que apresenta assassinos, bruxas, demônios, mutantes e, até mesmo, um homem invisível.<br><br>
+                <h4>Distribuição</h4>
+                Amazon Prime Video<br><br>
+                <h4>Prêmios</h4>
+                <strong>Macabro: International Horror Film Festival of Mexico City 2018</strong><br>
+                Vencedor Júri popular<br><br>
+                <strong>Cine Phenomena 2018</strong><br>
+                Vencedor Júri popular<br><br>
+                <strong>Linhares Fantástico 2018</strong><br>
+                Vencedor Júri popular<br>
+            </div>
+            <div class="sobre-col2" style="text-align:center">
+                <img src="he.jpg" width="100%" style="border-radius:15px"/>
+                <a href="https://www.youtube.com/watch?v=fh1wmKBrhiE" target="_blank" class="button">Trailer</a>
+                <a href="https://www.primevideo.com/dp/amzn1.dv.gti.2d394266-2acb-44e7-87db-0be1f8a7c3d8?autoplay=0&ref_=atv_cf_strg_wb" target="_blank" class="button">Assistir</a>
+            </div>
+        </div>
+        <div class="content col2">
+            <div class="sobre-col" style="font-size:14px">
+                <h3>Um de nós morre Hoje <strong>(2013)</strong></h3><br/>
+                <h4>Funções</h4>
+                Direção, direção de fotografia, montagem, efeitos digitais, mixagem de som, finalização.<br/><br/>
+                <h4>Prêmios</h4>
+                <strong>FECIM 2013</strong> (Muqui – ES)<br/>
+                Vencedor Melhor Curta de Ficção<br/><br/>
+                <strong>Primeiro Festival de Cinema Online</strong> (Brasília - DF)<br/>
+                Indicado: Melhor direção de Fotografia<br/><br/>
+                <h4>Principais festivais</h4>
+                Festival Primeiro Plano 2013 / Juiz de Fora - MG<br/>
+                1º Mostra de Cinema de Santos Dumont / Santos Dumont - MG - 2013<br/>
+                5º Mostra Cinema de Bordas / São Paulo - SP - 2013<br/>
+                DF - Primeiro Festival de Cinema Online<br/>
+                MG - II Mostra de Cinema de Santos Dumont 2014<br/>
+                ES - FECIM 2013 - Muqui<br/>
+                ESP - AlmerÌa Western Film Festival - AlmerÌa, Espanha<br/>
+                MG - 12.o Festival Primeiro Plano - Juiz de Fora <br/>
+                MG - Festival sem Paredes - Juiz de Fora  <br/>
+                MG - I Mostra de Cinema de Santos Dumont 2013<br/>
+                MG - Primeira Mostracurtas do IAD UFJF - Juiz de Fora<br/>
+                RS - 5.o Festival Internacional de Cinema da Fronteira - Bagé <br/>
+                SP - 5.a Mostra Cinema de Bordas<br/>
+                DF - 1.o Festival de Cinema Online<br/>
+                </div>
+                <div class="sobre-col2" style="text-align:center">
+                    <img src="udmh.jpg" width="100%" style="border-radius:15px"/>
+                    <a href="https://www.youtube.com/watch?v=NZeF4tSVyNE" target="_blank" class="button">Trailer</a>
+                    <a href="https://www.youtube.com/watch?v=zP8Lsz8TG60" target="_blank" class="button">Assistir</a>
+                </div>
+            </div> 
+        </div>
+            <div class="section">
+                <div class="parallax" style="background-image: url('bg1.jpg');">
+                    <h2>Outros trabalhos</h2>
+                </div>
+                <div class="content col2">
+                    <div class="sobre-col" style="font-size:14px">
+                        <h3>2024</h3>
+                        <br/>
+                        <strong>Enterre Seus Mortos</strong><br/>
+                        <i>Longa-metragem</i><br/>
+                        Diretor: Marco Dutra<br/>
+                        Produção: RT Features<br/>
+                        Distribuição: Globoplay<br/>
+                        Função: Artista de efeitos digitais<br/>
+                        <br/>
+                        <strong>Encanto Quebrado</strong><br/>
+                        <i>Curta-metragem</i><br/>
+                        Diretor: Luan Filippo Oldenbrock<br/>
+                        Produção: Chá Cinematográfico<br/>
+                        Distribuição: Imovision<br/>
+                        Função: Artista de efeitos digitais<br/>
+                        <br/>
+                        <strong>Ataques Psicotrópicos</strong><br/>
+                        <i>Curta-metragem</i><br/>
+                        Diretor: Calebe Lopes<br/>
+                        Função: Artista de efeitos digitais<br/>
+                        <br/>
+                        <h2>2020</h2><br/>
+                        <strong>1996</strong><br/>
+                        <i>Curta-metragem</i><br/>
+                        Função: Direção, roteiro, direção de fotografia, montagem, efeitos digitais, colorização, mixagem de som, finalização, marketing.<br/>
+                        <br/>
+                        <strong>Babelon</strong><br/>
+                        <i>Curta-metragem</i><br/>
+                        Direção: Leon Barbero<br/>
+                        Função: Artista de efeitos digitais.<br/>
+                        <br/>
+                        <strong>"O Bobo" de Igor Silveira</strong><br/>
+                        <i>Videoclipe</i><br/>
+                        Funções: Direção, Direção de fotografia, Montagem, Finalização.<br/>
+                        <br/>
+                        <strong>"Quarantine My Friend" de Siloé Claus</strong><br/>
+                        <i>Videoclipe</i><br/>
+                        Funções: Direção, Direção de fotografia, Montagem, Finalização.<br/>
+                        <br/>
+                        <strong>"A Vida É Agora" de Nois Treis</strong><br/>
+                        <i>Videoclipe</i><br/>
+                        Funções: Montagem, Colorização, Finalização.<br/>
+                        <br/>
+                        <h2>2018</h2><br/>
+                        <strong>Entre Les Ponts</strong><br/>
+                        <i>Curta-metragem</i>
+                        Diretor: Gabriel Almeida<br/>
+                        Funções: Montagem, Efeitos Visuais, Mixagem de som, Colorização, Finalização.<br/>
+                        <br/>
+                        <h2>2016</h2><br/>
+                        <strong>"A Luz" de Jane</strong><br/>
+                        <i>Videoclipe</i><br/>
+                        Funções: Direção, Direção de fotografia, Montagem, Colorização, Finalização.<br/>
+                        <br/>
+                        <h2>2012</h2><br/>
+                        <strong>Tempo</strong><br/><i>Documentário</i><br/>
+                        Funções: Direção, Direção de fotografia, Montagem, Colorização, Finalização.<br/>
+                        <br/>
+                        <h2>2010</h2><br/>
+                        <strong>A Maleta</strong><br/>  
+                        <i>Curta-Metragem</i><br/>
+                        Funções: Direção, Direção de fotografia, Montagem, Colorização, Finalização.<br/>
+                    </div>
+                    <div class="sobre-col2" style="font-size:14px">
+                        <h2>2023</h2>
+                        <br/>
+                        <strong>Wind Princess</strong><br/>
+                        <i>Curta-metragem</i><br/>
+                        Direção: Chris Tex<br/>
+                        Função: Artista de efeitos digitais<br/>
+                        <br/>
+                        <strong>Além do Vale da Estranheza</strong><br/>
+                        <i>Curta-metragem</i><br/>
+                        Direção: Leon Barbero<br/>
+                        Função: Artista de efeitos digitais<br/><br/>
+                        <strong>Em Movimento / Jiu-Jitsu de Gabriel Lamblet</strong><br/>
+                        <i>Documentário</i><br/>
+                        Direção: Gabriel Almeida<br/>
+                        Funções: Montagem, Mixagem de som, Finalização<br/>
+                        <br/>
+                        <h2>2019</h2><br/>
+                        <strong>O Professor na Máquina do Tempo</strong><br/>
+                        <i>Documentário</i><br/>
+                        Diretor: Gabriel Almeida<br/>
+                        Funções: Montagem, Colorização, Finalização<br/>
+                        <br/>
+                        <h2>2017</h2>
+                        <br/>
+                        <strong>Histórias Estranhas (Segmento: Ninguém)</strong><br/>
+                        Produtor: Ricardo Ghiorzi<br/>
+                        Funções: Direção, roteiro, montagem, efeitos digitais, finalização, motion designer, designer.<br/>
+                        <br/>
+                        <h2>2015</h2><br/>
+                        <strong>Apartamento 1412</strong><br/>
+                        <i>Curta-Metragem</i><br/>
+                        Funções: Direção, Direção de fotografia, Roteiro, Montagem, Colorização, Finalização<br/>
+                        <br/>
+                        <h2>2013</h2><br/>
+                        <strong>"Conviction" de PrimatériA</strong><br/>
+                        <i>Videoclipe</i><br/>
+                        Funções: Direção, Direção de fotografia, Montagem, Colorização, Finalização<br/>
+                        <br/>
+                        <strong>Charlie Dimileto</strong><br/>
+                        <i>Curta-Metragem</i><br/>
+                        Diretor: Henrique Vale<br/>
+                        Função: Logger<br/>
+                        <br/>
+                        <h2>2011</h2><br/>
+                        <strong>"Glory Days" de Siloé Claus</strong><br/>
+                        <i>Videoclipe</i><br/>
+                        Funções: Direção, Direção de fotografia, Montagem, Colorização, Finalização<br/>
+                        <br/>
+                        <h2>2007</h2><br/>
+                        <strong>Era dos Mortos</strong><br/>
+                        <i>Média-Metragem</i><br/>
+                        Funções: Direção, Direção de fotografia, Montagem, Colorização, Finalização<br/>
+                        <br/>
+                        <h2>2006</h2><br/>
+                        <strong>Entrega Especial</strong><br/><i>Curta-Metragem</i><br/>
+                        Funções: Direção, Direção de fotografia, Montagem, Colorização, Finalização<br/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="parallax" style="background-image: url('bg2.jpg');">
+            <h2>Críticas e Notícias</h2>
+        </div>
+        <div class="content">
+            <div class="imprensa">
+
+                <a href="https://tvbrasil.ebc.com.br/curta-em-cena/2017/08/diretor-rodrigo-brandao-reforca-importancia-dos-festivais-de-cinema" target="_blank">TV Brasil - Entrevista com Rodrigo Brandão</a><br/>
+<small>Entrevista concedida ao canal TV Brasil.</small><br/><br/>
+              
+<a href="https://www.omelete.com.br/terror/phenomena-festival-2019-filmes#9" target="_blank">Omelete - Phenomena Festival 2019</a><br>
+<small>Divulgação pelo site Omelete do Festival Phenomena, onde 1996 foi exibido.</small><br/><br/>
+
+<a href="http://primeiroplano.art.br/2020/retornar-para-ir-alem/" target="_blank">Primeiro Plano - Retornar para Ir Além</a><br>
+<small>Crítica ao filme 1996 escrito por Iago de Medeiros.</small><br/><br/>
+
+<a href="http://primeiroplano.art.br/2020/1996-2019-de-rodrigo-brandao/" target="_blank">Primeiro Plano - 1996 (2019) de Rodrigo Brandão</a><br>
+<small>Crítica ao filme 1996 escrito por Helom Paulino Ferreira.</small><br/><br/>
+
+<a href="http://guiadocinefilo.blogspot.com/2020/09/critica-do-filme-1996.html" target="_blank">Guia do Cinéfilo - Crítica</a><br>
+<small>Crítica ao filme 1996 escrito por Raphael Camacho.</small><br/><br/>
+
+<a href="https://www.tvcaete.com.br/noticia/1887/critica-do-filme-1996-" target="_blank">TV Caeté - Crítica</a><br>
+<small>Crítica ao filme 1996 escrito por Raphael Camacho.</small><br/><br/>
+
+<a href="https://pt.wikipedia.org/wiki/incidente_de_varginha" target="_blank">Wikipedia - Incidente de Varginha</a><br>
+<small>Referência ao filme 1996 na Wikipédia sobre o Incidente de Varginha.</small><br/><br/>
+
+<a href="https://letterboxd.com/film/1996/" target="_blank">Letterboxd - 1996</a><br>
+<small>Página do curta-metragem no Letterboxd com comentários dos espectadores.</small><br/><br/>
+
+<a href="https://filmow.com/1996-t296521/" target="_blank">Filmow - 1996</a><br>
+<small>Página do curta-metragem no Filmow com comentários dos espectadores.</small><br/><br/>
+
+<a href="https://www.imdb.com/title/tt29733130/?ref_=nm_flmg_knf_c_1" target="_blank">IMDb - 1996</a><br>
+<small>Página do curta-metragem no IMDb com comentários dos espectadores.</small><br/><br/>
+
+<a href="https://www.primevideo.com/detail/Hist%C3%B3rias-Estranhas/0HTZSE3HUOKSVTYEBH287YRY6W" target="_blank">Prime Video - Histórias Estranhas</a><br>
+<small>Página do longa-metragem no Amazon Prime Video.</small><br/><br/>
+
+<a href="https://www.imdb.com/title/tt7690900/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_historias%2520estranhas" target="_blank">IMDb - Histórias Estranhas</a><br>
+<small>Página do longa-metragem no IMDb com comentários dos espectadores.</small><br/><br/>
+
+<a href="https://cbn.globoradio.globo.com/media/audio/262260/historias-estranhas-e-uma-coletanea-de-curtas-metr.htm" target="_blank">CBN - Histórias Estranhas</a><br>
+<small>Notícia sobre o lançamento do longa-metragem.</small><br/><br/>
+
+<a href="https://www.matinaljornalismo.com.br/rogerlerina/cinema/historias-estranhas-reune-narrativas-de-terror-e-fantastico/" target="_blank">Matinal Jornalismo - Histórias Estranhas</a><br>
+<small>Notícia sobre o lançamento do longa-metragem.</small><br/><br/>
+
+<a href="https://oglobo.globo.com/rioshow/historias-estranhas-reune-curtas-brasileiros-de-terror-23696326" target="_blank">O Globo - Histórias Estranhas</a><br>
+<small>Notícia sobre o lançamento do longa-metragem.</small><br/><br/>
+
+<a href="https://www.correiodopovo.com.br/arteagenda/filme-hist%C3%B3rias-estranhas-exibe-oito-narrativas-sobrenaturais-em-porto-alegre-1.340643" target="_blank">Correio do Povo - Histórias Estranhas</a><br>
+<small>Notícia sobre o lançamento do longa-metragem.</small><br/><br/>
+
+<a href="https://cinepop.com.br/critica-historias-estranhas-nova-geracao-do-terror-brasileiro-212430/" target="_blank">CinePOP - Crítica de Histórias Estranhas</a><br>
+<small>Crítica ao filme Histórias Estranhas escrito por Janda Montenegro.</small><br/><br/>
+
+<a href="https://letterboxd.com/film/weird-stories/" target="_blank">Letterboxd - Weird Stories</a><br>
+<small>Página do longa-metragem no Letterboxd com comentários dos espectadores.</small><br/><br/>
+
+<a href="https://www.papodecinema.com.br/filmes/historias-estranhas/" target="_blank">Papo de Cinema - Histórias Estranhas</a><br>
+<small>Crítica ao filme por Marcelo Müller.</small><br/><br/>
+
+<a href="https://tribunademinas.com.br/noticias/cultura/20-04-2017/o-terror-que-nao-se-ve.html" target="_blank">Tribuna de Minas - O Terror que Não se Vê</a><br>
+<small>Entrevista com Rodrigo sobre o longa-metragem e o segmento Ninguém.</small><br/><br/>
+
+<a href="print_1.jpg" target="_blank">Festival Primeiro Plano 2020</a><br>
+<small>Página do curta-metragem 1996 no folheto do festival Primeiro Plano 2020.</small><br/><br/>
+
+<a href="print_4.jpg" target="_blank">Tribuna de Minas - O Terror que Não se Vê</a><br>
+<small>Versão impressa da entrevista com Rodrigo sobre o longa-metragem e o segmento Ninguém.</small><br/><br/>
+
+
+<a href="print_5.jpg" target="_blank">Jornal Mensagem de Santos Dumont</a><br>
+<small>Notícia sobre o lançamento do filme Histórias Estranhas.</small><br/><br/>
+
+
+<a href="print_8.jpg" target="_blank">Aplicativo Cinemark com o longa-metragem Histórias Estranhas</a><br>
+<small>Aplicativo da Cinemark com venda de ingressos do filme Histórias Estranhas.</small><br/><br/>
+
+<a href="print_9.jpg" target="_blank">Macabro: International Horror Film Festival of Mexico City</a><br>
+<small>Divulgação do filme ganhador do prêmio do Júri.</small><br/><br/>
+
+<a href="print_10.jpg" target="_blank">Jornal Panorama - Santos Dumont</a><br>
+<small>Divulgação do lançamento do curta-metragem A Maleta.</small><br/><br/>
+
+<a href="print_11.jpg" target="_blank">Jornal Panorama - Santos Dumont</a><br>
+<small>Divulgação de prêmio José Sette, ganho pelo curta A Maleta.</small><br/><br/>
+
+<a href="print_12.jpg" target="_blank">Tribuna de Minas - Na Onda do Cinema de Horror</a><br>
+<small>Matéria sobre o curta-metragem A Maleta.</small><br/><br/>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
