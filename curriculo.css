@@ -1,3 +1,5 @@
+@import url("https://unpkg.com/devicons@2.0.1/css");
+
 @page {
 	size: A4;
 	margin: 0;
@@ -39,12 +41,12 @@ body {
 
 h1 {
 	margin: 0;
-	font-size: 28px;
+	font-size: 24px;
 }
 
 h2 {
 	margin: 28px 0 16px;
-	font-size: 12px;
+	font-size: 11px;
 	text-transform: uppercase;
 	border-bottom: 1.5px solid #ccc;
 	padding-bottom: 4px;
@@ -64,9 +66,10 @@ h4 {
 }
 
 h5 {
-	font-size: 13px;
-	margin: 0 0 5px 0;
+	font-size: 12px;
+	margin: 0 0 4px 0;
 	padding: 0;
+	text-transform: uppercase;
 	opacity: 0.6;
 }
 
@@ -98,8 +101,39 @@ table.experience tr:first-child td {
 }
 
 table.experience td.time {
-	width: 110px;
+	width: 60px;
 	white-space: nowrap;
 	color: #999999;
 	font-size: 9.5px;
+}
+
+table.skills td {
+	padding: 0 10px 10px 0;
+	vertical-align: middle;
+}
+
+.skill {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	white-space: nowrap;
+}
+
+.skill .devicons {
+	font-family: "Devicons", "devicons", sans-serif;
+	font-size: 14px;
+	line-height: 1;
+}
+
+.skills-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px 14px;
+}
+
+@media print {
+	.skill .devicons {
+		-webkit-print-color-adjust: exact;
+		print-color-adjust: exact;
+	}
 }
