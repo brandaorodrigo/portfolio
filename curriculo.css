@@ -5,6 +5,10 @@
 	margin: 0;
 }
 
+:root {
+	--accent-color: #b2ce17;
+}
+
 body {
 	margin: 0;
 	background: #eee;
@@ -15,13 +19,23 @@ body {
 	width: 210mm;
 	min-height: 297mm;
 	margin: 60px auto;
-	padding: 18mm;
+	padding: 42px 55px 55px 55px;
 	background: #fff;
 	font-family: "Readex Pro", Arial, sans-serif;
 	font-size: 10px;
 	line-height: 1.5;
 	color: #333;
 	text-align: justify;
+	position: relative;
+	border-top: 16px solid var(--accent-color);
+}
+
+.links {
+	display: flex;
+	gap: 10px;
+	position: absolute;
+	top: 45px;
+	right: 55px;
 }
 
 .description {
@@ -48,7 +62,7 @@ h2 {
 	margin: 28px 0 16px;
 	font-size: 11px;
 	text-transform: uppercase;
-	border-bottom: 1.5px solid #ccc;
+	border-bottom: 2px solid var(--accent-color);
 	padding-bottom: 4px;
 }
 
@@ -89,7 +103,7 @@ table {
 table.experience td {
 	vertical-align: top;
 	padding: 15px 12px 15px 0;
-	border-bottom: 1.5px solid #eee;
+	border-bottom: 1.5px solid #e6e6e6;
 }
 
 table.experience tr:last-child td {
