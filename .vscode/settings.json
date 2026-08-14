@@ -1,0 +1,34 @@
+{
+    "editor.codeActionsOnSave": {
+        "source.action.useSortedAttributes.biome": "explicit",
+        "source.action.useSortedKeys.biome": "explicit",
+        "source.fixAll.biome": "explicit",
+        "source.organizeImports.biome": "explicit"
+    },
+    "editor.defaultFormatter": "biomejs.biome",
+    "editor.fontSize": 12.5,
+    "editor.formatOnSave": true,
+    "editor.guides.bracketPairs": true,
+    "editor.lineHeight": 1.5,
+    "editor.renderWhitespace": "all",
+    "editor.rulers": [160],
+    "editor.tabSize": 4,
+    "flow-icons.folders.associations": {
+        "ai-report": "sequence",
+        "ai-seller": "skills",
+        "billing": "note",
+        "config": "tools",
+        "crm": "database",
+        "crud": "interface",
+        "gamefication": "console",
+        "login": "room",
+        "marketing": "simulations",
+        "monitor": "desktop",
+        "planner": "messages",
+        "report": "chart",
+    },
+    "flow-icons.files.associations": {
+        "*.css": "sublime",
+    },
+    "workbench.tree.indent": 20
+}
